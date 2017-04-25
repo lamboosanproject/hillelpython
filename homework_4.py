@@ -10,6 +10,15 @@ from math import *
 
 # 15
 
+# def is_circles_intersect(x1, y1, radius_1, x2, y2, radius_2):
+#     d = (x1 - x2) * 2 + (y1 - y2) * 2
+#     d_1 = d//2
+#     if d_1 <= radius_1 + radius_2:
+#         print("Circles are intersected")
+#     elif [radius_1 - radius_2] > d_1:
+#         print("Circles do not intersect, because One circle is inside the other")
+#     else: print("Do not intersect")
+#
 # x1 = float(input('Enter x1: '))
 # y1 = float(input('Enter y1: '))
 # radius_1 = float(input('Enter radius 1: '))
@@ -18,42 +27,41 @@ from math import *
 # y2 = float(input('Enter y2: '))
 # radius_2 = float(input('Enter radius 2: '))
 #
-# def is_circles_intersect():
-#     center_distance = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2))
-#     result = center_distance - (radius_1 + radius_2)
-#     return result <= 0
-#
-# print("Is circles intersect?:", is_circles_intersect())
+# is_circles_intersect(x1, y1, radius_1, x2, y2, radius_2)
 
 # 16
 
+# def will_the_trains(first_train,second_train):
+#
+#     first_train_time = 4 / first_train
+#     second_train_time = 6 / second_train
+#     if first_train_time < second_train_time:
+#         print("Trains will not collide")
+#     else:
+#         print("Trains will collide")
+#
 # first_train = float(input('Enter speed first train: '))
 # second_train = float(input('Enter speed second train: '))
-# first_train_time = 4 / first_train
-# second_train_time = 6 / second_train
 #
-# if first_train_time < second_train_time:
-#     print("Trains will not collide")
-# else:
-#     print("Trains will collide")
+# will_the_trains(first_train, second_train)
 
 # 17
-
-def solve_quadratic_equation(a, b, c):
-    discriminant = pow(b, 2) - 4 * a * c
-    if discriminant > 0:
-        x1 = (-b - sqrt(discriminant)) / (2 * a)
-        x2 = (-b + sqrt(discriminant)) / (2 * a)
-    elif discriminant == 0:
-        x1 = x2 = (-b) / (2 * a)
-    elif discriminant < 0:
-        x1 = x2 = None
-    return x1, x2
-
-a = int(input("Enter a:"))
-b = int(input("Enter b:"))
-c = int(input("Enter c:"))
-
-print("The result for a = %d, b = %d and c = %d is:" % (a, b, c), solve_quadratic_equation(a, b, c))
-
-
+#
+# def solve_quadratic_equation(a, b, c):
+#     discriminant = pow(b, 2) - 4 * a * c
+#     if discriminant > 0:
+#         x1 = (-b - sqrt(discriminant)) / (2 * a)
+#         x2 = (-b + sqrt(discriminant)) / (2 * a)
+#     elif discriminant == 0:
+#         x1 = x2 = (-b) / (2 * a)
+#     elif discriminant < 0:
+#         x1 = x2 = None
+#     return x1, x2
+#
+# a = int(input("Enter a:"))
+# b = int(input("Enter b:"))
+# c = int(input("Enter c:"))
+#
+# print("The result for a = %d, b = %d and c = %d is:" % (a, b, c), solve_quadratic_equation(a, b, c))
+#
+#

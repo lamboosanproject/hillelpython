@@ -10,24 +10,25 @@ from math import *
 
 # 15
 
-# def is_circles_intersect(x1, y1, radius_1, x2, y2, radius_2):
-#     d = (x1 - x2) * 2 + (y1 - y2) * 2
-#     d_1 = d//2
-#     if d_1 <= radius_1 + radius_2:
-#         print("Circles are intersected")
-#     elif [radius_1 - radius_2] > d_1:
-#         print("Circles do not intersect, because One circle is inside the other")
-#     else: print("Do not intersect")
-#
-# x1 = float(input('Enter x1: '))
-# y1 = float(input('Enter y1: '))
-# radius_1 = float(input('Enter radius 1: '))
-#
-# x2 = float(input('Enter x2: '))
-# y2 = float(input('Enter y2: '))
-# radius_2 = float(input('Enter radius 2: '))
-#
-# is_circles_intersect(x1, y1, radius_1, x2, y2, radius_2)
+def is_circles_intersect(x1, y1, radius_1, x2, y2, radius_2):
+    import math
+
+    distance = (x1 - x2) ** 2 + (y1 - y2) ** 2
+    radius = radius_1 + radius_2
+    if distance <= radius or distance < (math.fabs(radius_1 - radius_2)):
+        print("Circles are intersected")
+    else:
+        print("Do not intersect")
+
+x1 = float(input('Enter x1: '))
+y1 = float(input('Enter y1: '))
+radius_1 = float(input('Enter radius 1: '))
+
+x2 = float(input('Enter x2: '))
+y2 = float(input('Enter y2: '))
+radius_2 = float(input('Enter radius 2: '))
+
+is_circles_intersect(x1, y1, radius_1, x2, y2, radius_2)
 
 # 16
 

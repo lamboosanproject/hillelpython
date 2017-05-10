@@ -65,7 +65,7 @@
 # 6
 # import random
 #
-# number = int(50)
+# number = 50
 # listing = [2]
 #
 # for i in range(3, number + 1, 2):
@@ -85,12 +85,19 @@
 
 # 7
 
-# def fib(number):
-#     if number == 1 or number == 2:
-#         return 1
-#     return fib(number - 1) + fib(number - 2)
-#
-# print(fib(10))
+def fib(n):
+    a = 0
+    b = 1
+    d = 0
+
+    for i in range(2, n + 1):
+        c = a + b
+        a, b = b, c
+        d += c
+        print(c, end=' ')
+    print("Summ = ", d)
+
+fib(10)
 
 # 8
 

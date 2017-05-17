@@ -65,7 +65,7 @@
 # 6
 # import random
 #
-# number = int(50)
+# number = 50
 # listing = [2]
 #
 # for i in range(3, number + 1, 2):
@@ -85,12 +85,19 @@
 
 # 7
 
-# def fib(number):
-#     if number == 1 or number == 2:
-#         return 1
-#     return fib(number - 1) + fib(number - 2)
+# def fib(n):
+#     a = 0
+#     b = 1
+#     d = 0
 #
-# print(fib(10))
+#     for i in range(2, n + 1):
+#         c = a + b
+#         a, b = b, c
+#         d += c
+#         print(c, end=' ')
+#     print("Summ = ", d)
+#
+# fib(10)
 
 # 8
 
@@ -118,16 +125,23 @@
 
 # 10
 
-# table = []
-# k = 10
-# for line in range(8):
-#     table.append([])
-#     for columns in range(3):
-#         table[line].append(k)
-#         k += 1
-#
-# for line in table:
-#     print(line)
+def matrix(lin, columns):
+
+    table = []
+    k = 10
+    for line in range(lin):
+        table.append([])
+        for column in range(columns):
+            table[line].append(k)
+            k += 1
+
+    for line in table:
+        print(line)
+
+lines = int(input("Enter line: "))
+columns = int(input("Enter column: "))
+
+matrix(lines, columns)
 
 # 11
 

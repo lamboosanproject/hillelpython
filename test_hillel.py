@@ -1,3 +1,5 @@
+from random import random, randint
+
 # 1
 
 # a = 2
@@ -63,7 +65,6 @@
 # nearest_to_10(b, c)
 
 # 6
-# import random
 #
 # number = 50
 # listing = [2]
@@ -121,28 +122,55 @@
 
 # 9
 
-
+# def randomize_list(num, lower_limit, upper_limit):
+#     array = []
+#     for i in range(num):
+#         array.append(randint(lower_limit, upper_limit))
+#     array.sort()
+#     print(array)
+#     return array
+#
+# def normalize(n):
+#     max_abs = array[0]
+#     for i in range(n - 1):
+#         if abs(array[i + 1]) > abs(max_abs):
+#             max_abs = array[i + 1]
+#
+#     for i in range(n):
+#         array[i] /= abs(max_abs)
+#     print(array)
+#
+# array = randomize_list(3, -10, 10)
+# normalize(3)
 
 # 10
 
-def matrix(lin, columns):
-
-    table = []
-    k = 10
-    for line in range(lin):
-        table.append([])
-        for column in range(columns):
-            table[line].append(k)
-            k += 1
-
-    for line in table:
-        print(line)
-
-lines = int(input("Enter line: "))
-columns = int(input("Enter column: "))
-
-matrix(lines, columns)
-
 # 11
+
+
+# 12
+
+# number = 10
+# array = [[0] * number for i in range(number - 1)]
+#
+# count = 0
+# arrays = []
+# reverse_lst = []
+#
+# for i in range(2, number + 1):
+#     for j in range(2, number + 1):
+#         array[i - 2][j - 2] = str(i) + ' * ' + str(j)
+#
+# while count != 15:
+#     x = randint(0, len(array) - 1)
+#     y = randint(0, len(array) - 1)
+#     if (x == y) or (array[x][y] in arrays) or (array[x][y] in reverse_lst):
+#         continue
+#     else:
+#         count += 1
+#         print(str(count) + ')', array[x][y])
+#         arrays.append(array[x][y])
+#
+# reverse_lst.append(array[x][y][::-1])
 
 

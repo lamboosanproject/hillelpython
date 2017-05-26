@@ -1,11 +1,11 @@
 import pickle
 
 phone_book = [
-    {"name": "Petr", "surname": "Petrov", "age": 50, "phone_number":"+380501234567"},
-    {"name": "Ivan", "surname": "Ivanov", "age": 15, "phone_number":"+380507654321"},
-    {"name": "Victor", "surname": "Victorov", "age": 24, "phone_number":"+380931234567"},
-    {"name": "Vasia", "surname": "Vasiliev", "age": 18, "phone_number":"+380937531598"},
-    {"name": "Oleg", "surname": "Olegov", "age": 18, "phone_number":"+380907521389"},
+    {"name": "Petr", "surname": "Petrov", "age": 50, "phone_number":"+380501234567", "skype": ""},
+    {"name": "Ivan", "surname": "Ivanov", "age": 15, "phone_number":"+380507654321", "skype": ""},
+    {"name": "Victor", "surname": "Victorov", "age": 24, "phone_number":"+380931234567", "skype": ""},
+    {"name": "Vasia", "surname": "Vasiliev", "age": 18, "phone_number":"+380937531598", "skype": ""},
+    {"name": "Oleg", "surname": "Olegov", "age": 18, "phone_number":"+380907521389", "skype": ""},
 ]
 
 def print_entry(number, entry):
@@ -102,7 +102,24 @@ def print_avr_age():
     print("Average age of all persons is", int(summ/person))
 
 def increase_age(number_of_years):
-    pass
+    phn_id = 0
+    for entry in phone_book:
+        entry['age'] += number_of_years
+        phn_id += 1
+        print_entry(phn_id, entry)
+
+def add_skype(name):
+    entry = {}
+    found = False
+    for keys in phone_book:
+        if keys["name"] == name:
+            skype = str(input("    Enter skype name: "))
+            entry["skype"] = skype
+            phone_book.append(entry)
+            print("Add success")
+            found = True
+    if not found:
+        printInfo("Name not found!")
 
 def save_to_file():
     pickle.dump(phone_book, open("phone_book.save", "wb"))
@@ -133,6 +150,7 @@ def main():
             print ("     7 - The number of entries in the phonebook")
             print ("     8 - Avr. age of all persons")
             print ("     9 - Increase age by num. of years")
+            print ("     10 - Add Skype name")
             print ("-----------------------------")
             print ("     s - Save to file")
             print ("     l - Load from file")
@@ -164,8 +182,11 @@ def main():
             elif choice == 8:
                 print_avr_age()
             elif choice == 9:
-                nmbrs_of_years = int(raw_input("    Enter number of years to add to current ages: "))
+                nmbrs_of_years = int(input("    Enter number of years to add to current ages: "))
                 increase_age(nmbrs_of_years)
+            elif choice == 10:
+                name = str(input("    Enter name: "))
+                add_skype(name)
             elif choice == 0:
                 print ("Bye!")
                 break

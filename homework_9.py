@@ -78,14 +78,14 @@ def update_students_results(group):
             test1_results[i]["task_completion"][j] *= test1_weights[j + 1]
 
     for element in group:
-        for idx in hw_results:
-            if element["id"] == idx["id"]:
-                element["rank"] = sum(idx["task_completion"])
+        for hw_result in hw_results:
+            if element["id"] == hw_result["id"]:
+                element["rank"] = sum(hw_result["task_completion"])
 
     for element_2 in group:
-        for idx_2 in test1_results:
-            if element_2['id'] == idx_2['id']:
-                element_2['rank'] += sum(idx_2['task_completion'])
+        for hw_result in test1_results:
+            if element_2['id'] == hw_result['id']:
+                element_2['rank'] += sum(hw_result['task_completion'])
     return group
 
 def printing(group):
@@ -97,7 +97,7 @@ def printing(group):
         print("ID: %27s" % student['id'])
         print("Full name: %20s" % student['fullname'])
         print("Email: %s" % student['email'])
-        print("Giithub: %22s" % student['github'][group[0]['github'].rindex('/') + 1:])
+        print("Github: %22s" % student['github'][group[0]['github'].rindex('/') + 1:])
         print("Rank: %25s" % student['rank'])
         print('-' * 31)
 
